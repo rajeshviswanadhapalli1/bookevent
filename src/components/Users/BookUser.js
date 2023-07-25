@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import moment from 'moment';
 import { createZoomMeeting } from "../common/zoomapi";
+import axios from "axios";
 
 // import './App.css';
 // import Resources from 'util';
@@ -52,8 +53,8 @@ const BookUser = () => {
                 startTime:st,
                 endTime:et
   }
-  const zoomMeetingUrl = await createZoomMeeting(meetdata);
-               console.log('Zoom meeting URL:', zoomMeetingUrl);
+ const data = await axios.get('http://localhost:5000/api/v1/auth/zoom/callback');
+ console.log(data,'data');
             const obj = {
                 title:eventname,
                 date:date,
