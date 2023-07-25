@@ -60,7 +60,7 @@ const BookUser = () => {
                 date:date,
                 startTime:st,
                 endTime:et,
-                url:zoomMeetingUrl
+                // url:zoomMeetingUrl
             }
             console.log(obj,'obj');
             // const data = await localStorage.getItem('eventdata');
@@ -89,7 +89,7 @@ const BookUser = () => {
    }
     return (
         <div className='bookContainer'>
-            <h2 className='bookTitle'>Book a Event</h2>
+            <h2 className='bookTitle'>Book a Events</h2>
             <div className='booking__form'>
                 <label htmlFor='fullName'>Event Name</label>
                 <input
