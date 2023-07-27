@@ -22,6 +22,19 @@ const EventCalender = () => {
         // day: true,
         agenda: true
       };
+      const eventStyle = {
+        color: 'white',
+        backgroundColor: '#007bff',
+        borderRadius: '5px',
+        padding: '5px',
+        cursor: 'pointer',
+      };
+      const handleEventClick = (event) => {
+        // Check if the event has the 'zoomMeetingUrl' property
+        if (event.zoomMeetingUrl) {
+          window.open(event.zoomMeetingUrl, '_blank'); // Open the Zoom meeting URL in a new tab
+        }
+      };
 //     const startTime = moment(`${eventObject.date} ${eventObject.startTime}`);
 //   const endTime = moment(`${eventObject.date} ${eventObject.endTime}`);
     return ( 
@@ -37,6 +50,10 @@ const EventCalender = () => {
                 defaultView="month"
                 views={views}
                 style={{ height: 500,}}
+                eventPropGetter={() => ({
+                    style: eventStyle,
+                  })}
+                  onSelectEvent={handleEventClick}
               /> : null
             }
             </div>
